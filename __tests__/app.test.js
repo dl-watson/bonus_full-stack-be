@@ -7,4 +7,6 @@ describe("bonus_full-stack-be routes", () => {
   beforeEach(() => {
     return pool.query(fs.readFileSync("./sql/setup.sql", "utf-8"));
   });
+
+  it("tests that a user can post to the /users endpoint successfully", () => {});
 });
