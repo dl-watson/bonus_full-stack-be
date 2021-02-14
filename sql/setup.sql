@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS frogs;
 
-CREATE TABLE users (
+CREATE TABLE frogs (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    username TEXT NOT NULL, 
-    email TEXT NOT NULL, 
-    password TEXT NOT NULL
+    name TEXT NOT NULL, 
+    image TEXT NOT NULL, 
+    description TEXT NOT NULL
 );
