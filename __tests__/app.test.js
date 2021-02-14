@@ -8,5 +8,21 @@ describe("bonus_full-stack-be routes", () => {
     return pool.query(fs.readFileSync("./sql/setup.sql", "utf-8"));
   });
 
-  it("tests that a user can post to the /users endpoint successfully", () => {});
+  it("tests that a user can post to the /users endpoint successfully", () => {
+    return request(app)
+      .post("/users")
+      .send({
+        username: "username",
+        email: "email@email.com",
+        password: "password",
+      })
+      .then((res) =>
+        expect(res.body).toEqual({
+          id: expect.anything(),
+          username: "username",
+          email: "email@email.com",
+          password: "password",
+        })
+      );
+  });
 });
